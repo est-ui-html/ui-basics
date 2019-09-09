@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<script type="text/javascript" src="jsSample.js"></script>
+    <style type="text/css"> 
+        .redBorder {
+            position: relative;
+            top: 50px;
+            border: 2px solid red;
+            padding: 5px;
+        }
+
+        form > input {
+            border-color: lightblue;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 3px;
+        } 
+
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body align="">
+    <noscript>Please enable the Javascript in your browser</noscript>
+	<form action="https://www.google.com" class="redBorder" method="get">
+        <!-- <input type="text" id="name" name="" value="" required></br> -->
+        <input type="text" tabindex="2" placeholder="Enter name" oninput="changeHandler(event)" required>
+        <!-- <input type="text" tabindex="1" placeholder="Enter name" required> -->
+        <input type="password" id="password" tabindex="2" placeholder="Enter password" name="" required>
+	    <input type="file" name="myFileComponent" tabindex="3" accept="image/jpeg" onchange="fileSelectHandler(event)" required>
+	    <p id="disp"></p>
+		<input type="submit" tabindex="4" onclick="check()">
+        <input type="reset" name="Reset">
+	</form>
+    <!-- <div onclick="divClickHandler(event)" style="border: 2px solid orange; margin-top: 5px; position: relative; top: 80px;">
+        <button onclick="btnClickHandler(event)">Click me</button>
+    </div> -->
+</body>
+</html>

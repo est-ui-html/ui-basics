@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	<script type="text/javascript">
+		getVal = (event) => {
+			alert(`${event.target.value}`);
+		}
+
+		sliderValue = (event) => {
+			console.log(event.target.value);
+			document.getElementById('slider').innerText = event.target.value;
+		}
+	</script>
+	<style type="text/css">
+		td, th {
+			padding: 10px;
+		}
+	</style>
+</head>
+<body align="center">
+	&lt;input&gt;
+	<form>
+		<table border="2px solid black">
+			<thead>
+				<th>Input type</th>
+				<th>Visual representation</th>
+			</thead>
+			<tbody>
+				<tr><td>submit and reset</td><td><input type="submit" name="" value="Submit Button"> <input type="reset" name="" value="Reset Button"></td></tr>
+				<tr><td>text</td><td><input type="text" minlength="4" maxlength="7" name="" placeholder="Enter text" required></td></tr>
+				<tr><td>number</td><td><input type="number" name="" required></td></tr>
+				<tr><td>button</td><td><input type="button" name="" value="Hi ! I'm a button"></td></tr>
+				<tr><td>radio</td><td>JS<input type="radio" name="demo" value="Hi ! I'm a button">CSS<input type="radio" name="demo" value="Hi ! I'm a button"></td></tr>
+				<tr><td>checkbox</td><td><input type="checkbox" name=""></td></tr>
+				<tr><td>color</td><td><input onchange="getVal(event)" type="color" name="" value="Hi ! I'm a button"></td></tr>
+				<tr><td>date</td><td><input type="date" name="" onchange="getVal(event)"></td></tr>
+				<tr><td>datetime-local</td><td><input type="datetime-local" name=""></td></tr>
+				<tr><td>email</td><td><input type="email" name="" required></td></tr>
+				<tr><td>file</td><td><input type="file" name=""></td></tr>
+				<tr><td>hidden</td><td><input type="hidden" name="hiddenName" value="a$10$78db_Bgfdk"></td></tr>
+				<tr><td>image</td><td><input type="image" name="" src="https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_bigger.jpg"></td></tr>
+				<tr><td>image with <code>&lt;img&gt;</code> tag</td><td><img name="" src="https://pbs.twimg.com/profile_images/1157035760085684224/iuxTnT5g_bigger.jpg"></td></tr>
+				<tr><td>month</td><td><input type="month" name="" value=""></td></tr>
+				<tr><td>password</td><td><input type="password" name="" value=""></td></tr>
+				<tr><td>range</td><td>0<input type="range" step="0.5" min="0" onchange="sliderValue(event)" max="10" name="" value="">10 &nbsp; Value : <span id="slider">0</span></td></tr>
+				<tr><td>search</td><td><input type="search" name="" value=""></td></tr>
+				<tr><td>tel</td><td><input type="tel" name="" value=""></td></tr>
+				<tr><td>time</td><td><input type="time" name="" value=""></td></tr>
+				<tr><td>url</td><td><input type="url" name="" value=""></td></tr>
+				<tr><td>week</td><td><input type="week" name="" value=""></td></tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>
