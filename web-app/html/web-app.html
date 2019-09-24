@@ -7,16 +7,19 @@
 			
 		</script>
 		<!-- <script type="text/javascript" src="../js/web-app.js"></script> -->
-		<script type="text/javascript" src="../js/arrayFunctions.js"></script>
+		<!-- <script type="text/javascript" src="../js/exercise1.js"></script> -->
+		<!-- <script type="text/javascript" src="../js/arrayFunctions.js"></script> -->
 		<!-- <script type="text/javascript" src="../js/callbackFunction.js"></script> -->
 		<!-- <script type="text/javascript" src="../js/referenceType.js"></script> -->
 		<!-- <script type="text/javascript" src="../js/roughPractice.js"></script> -->
-		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.min.js"></script> -->
+		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.core.min.js"></script> -->	
 		<script type="text/javascript">
-			alert("Hi im inside the file");
-			console.log("Im inside the file	")
+			setInterval(() => {
+				currTime = new Date().getHours() + " : " + new Date().getMinutes() + " : " + new Date().getSeconds();
+				document.getElementById('timer').innerHTML = currTime;
+			}, 1000);
 		</script>
-		<script type="text/javascript" src="../js/arrayOfObjects.js"></script>
+		<!-- <script type="text/javascript" src="../js/arrayOfObjects.js"></script> -->
 		<style type="text/css">
 		</style>
 		<link rel="stylesheet" type="text/css" href="../css/web-app.css">
@@ -24,10 +27,22 @@
 	</head>
 	<body>
 		<!-- <h1>Hi Guys</h1> -->
-		<p>Hello</p>
-		<form>
+		<p>Hello
+		</p>
+		<h1 id="timer"></h1>
+		
+		<!-- <form action="https://www.google.com/" onsubmit="clickListener(event)">
 			<input type="text" name="" required>
 			<input type="submit" name="">
-		</form>
+		</form> -->
+		<input id="name" class="myClass" type="text" name="wholeName" placeholder="Enter name" oninput="inputListener(event)" />
+		<input id="pass" class="myClass" type="password" name="mypassword" placeholder="Enter password">
+		<!-- <button onclick="showPassword()">Show Password</button> -->
+		<!-- <button onclick="hidePassword()">Hide Password</button> -->
+		<button id="btn" onclick="toggleShow()">Toggle Password</button>
+		<script type="text/javascript">
+			document.getElementById('timer').innerHTML = new Date().getHours() + " : " + new Date().getMinutes() + " : " + new Date().getSeconds();
+		</script>
+		<script type="text/javascript" src="../js/exercise1.js"></script>
 	</body>
 </html>

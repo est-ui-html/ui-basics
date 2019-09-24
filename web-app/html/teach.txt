@@ -1,0 +1,78 @@
+first explain the html page and its structure
+
+then explain the few tags used in the structure like html, head, body, meta, script, style, link
+
+give some example of tags like p, b, br, h1 to h6, div, span, code, img, strong, emphasize tag, 
+
+show the page where all the types are mentioned.
+
+===========================================================================
+
+Javascript:
+-------------
+
+1. What is javascript and how to start in it ?
+2. what are the data types in the javascript. what are the keywords in javascript.
+
+undefined means the value doesn't but exist but the variable or the particular thing exist.
+
+null is an object
+
+
+
+defaults in function argument and also the || and && operators in the javacript apart from general usage
+
+
+
+
+3. var, let, const, objects and function declaration Vs function expressions and arrow function.
+
+DOM parser + CSS parser => Layout engine or Rendering Engine
+
+Javascript Engine e.g. spider monkey in firefox, v8 engine in chrome, Nitro in safari and IE has Chakra.
+
+Javascript Engine can be an interpreter or a JIT compiler.
+
+whatever we write directly are part of the window object.
+
+
+4. window context (Global)
+
+
+Hoisting
+
+
+
+
+
+3. atob and btoa
+4. Difference between encoding/decoding and encryption/decryption and hashing !!!
+
+
+
+
+JSON vs XML data representation.
+
+
+
+
+===============
+window.location.href = " " && window.location.replace = "" differences
+
+might be replace wont give the back option whereas the href will give the back going history.
+======================
+
+JSON.parse("{\"a\":1,\"b\":2}")
+{a: 1, b: 2}
+
+Note: JSON.stringify() method ignores the key value pairs where the value is undefined.
+
+
+---> tell them noValidate and string interpolation in forms and js respectively.
+single line function writting
+
+---> script type sequential execution;
+---> setTimeout and setInterval methods
+
+
+.gitignore file

@@ -2,10 +2,10 @@
 
 let numArray = [1,2,3,4,5];
 
-let res  = numArray.map((num, index, arr) => {
-	return arr;
+let res  = numArray.find((num) => {
+	return num > 7;
 });
-console.log("Res --> ", num);
+console.log("Res --> ", res);
 
 let objectArray = [
 	{name: "Pavithra",id: 5100,phone: 9819759230},
@@ -19,19 +19,29 @@ let objectArray = [
 
 // forEach function()
 console.log("\n ============== forEach() ======================");
-let forResult = objectArray.forEach((ele) => {
-	console.log(ele);
-	return "abc"
+let forResult = objectArray.forEach((ele, index) => {
+	// console.log(ele);
+		// ele.company = "Estuate";
+	// return "abc"
 });
+
+console.log("Original objectArray : ", objectArray);
 console.log("Return type of the forEach function is : ", forResult);
 
 // map function()
 console.log("\n ============== map() ======================");
 
 let mapResult = objectArray.map((ele, index) => {
-	return {...ele};
+	// return {...ele};
+	// if(ele.id === 5102) {
+	// 	return { ...ele, company: "Estuate"};
+	// }
+	// return {...ele};
+	ele.company = "Estuate"
+	return ele;
 });
 
+mapResult[0].name = "Tony";
 // mapResult[0].name = "Aish";
 console.log("Original objectArray : ", objectArray);
 console.log("Return type of the map function is : ", mapResult);

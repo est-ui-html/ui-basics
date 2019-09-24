@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Application Form</title>
+
+</head>
+<body align="center">
+	<!-- <form style="border: 3px solid red; width: 30%" action="https://www.google.com/"> -->
+		<p><input type="text" class="sample" id="fname" name="firstName" placeholder="First Name"></p>
+		<p><input type="text" id="lname" name="LastName" placeholder="Last Name"></p>
+		<p><input type="number" id="age" name="age" placeholder="Enter Age"></p>
+		<p><input type="email" id="emailId" name="myEmail" placeholder="Your email"></p>
+		<p><input type="text" id="phone" name="myPhoneNumber" placeholder="Phone number"></p>
+		<p>Gender: <input type="radio" id="" name="gender" value="male">Male <input type="radio" id="" name="gender" value="female"> Female</p>
+		<p>Skills: <input type="checkbox" id="" name="skills" value="java">Java <input type="checkbox" id="" name="skills" value="javascript"> Javascript</p>
+		<p>Expected Sal:
+			<select id="sal" name="salary">
+				<option value=""> --- Select --- </option>
+				<option value="less"> <1000</option>
+				<option value="medium">1000 - 5000</option>
+				<option value="more">5000 - 10000</option>
+			</select>
+		</p>
+		<p><input type="password" id="pass1" name="enterPassword" placeholder="Password"></p>
+		<p><input type="password" id="pass2" name="reEnterPassword" placeholder="Confirm Password"></p>
+		<textarea></textarea>
+		<!-- <p><input type="submit" name="" value="Save"> <input type="reset" name="" value="Reset"></p> -->
+		<p><button onclick="validate();" name="">Save</button> <input type="reset" name="" value="Reset"></p>
+	<!-- </form> -->
+	<script type="text/javascript">
+		function validate() {
+			let firstName = document.getElementById('fname');
+			let lastName = document.getElementsByName('LastName')[0];
+			let age = document.getElementById('age');
+			let email = document.getElementById('emailId');
+			let phone = document.getElementById('phone');
+
+			if(firstName.value === "" || firstName.value === undefined || firstName.value === null ) {
+				alert("first name should not be empty");
+				firstName.focus();
+				return false;
+			} else {
+				if(firstName.value.length <= 3 && isNaN(firstName.value)){  // isNaN() returns true for the strings and false for a valid number or a number as a string.
+					firstName.value = "";
+					firstName.focus();
+					alert("Less than 4 characters not allowed");
+					
+					return false;
+				} 
+				if ( isNaN(firstName.value) === false ) {
+					alert("Its a number. Number not allowed");
+					firstName.value = "";
+					firstName.focus();
+					return false;
+				}
+			}
+		}
+	</script>
+</body>
+</html>
