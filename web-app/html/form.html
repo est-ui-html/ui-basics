@@ -6,13 +6,13 @@
 </head>
 <body align="center">
 	<!-- <form style="border: 3px solid red; width: 30%" action="https://www.google.com/"> -->
-		<p><input type="text" class="sample" id="fname" name="firstName" placeholder="First Name"></p>
-		<p><input type="text" id="lname" name="LastName" placeholder="Last Name"></p>
+		<p><input type="text" class="sample" id="fname" name="firstName" placeholder="First Name*"></p>
+		<p><input type="text" id="lname" name="LastName" placeholder="Last Name*"></p>
 		<p><input type="number" id="age" name="age" placeholder="Enter Age"></p>
 		<p><input type="email" id="emailId" name="myEmail" placeholder="Your email"></p>
 		<p><input type="text" id="phone" name="myPhoneNumber" placeholder="Phone number"></p>
-		<p>Gender: <input type="radio" id="" name="gender" value="male">Male <input type="radio" id="" name="gender" value="female"> Female</p>
-		<p>Skills: <input type="checkbox" id="" name="skills" value="java">Java <input type="checkbox" id="" name="skills" value="javascript"> Javascript</p>
+		<p>Gender: <input type="radio" id="radioMale" name="gender" value="male">Male <input type="radio" id="radioFemale" name="gender" value="female"> Female</p>
+		<p>Skills: <input type="checkbox" id="javachk" name="skills" value="java"><label for="javachk">Java</label><input type="checkbox" id="jschk" name="skills" value="javascript"><label for="jschk">Javascript</label></p>
 		<p>Expected Sal:
 			<select id="sal" name="salary">
 				<option value=""> --- Select --- </option>
@@ -23,17 +23,28 @@
 		</p>
 		<p><input type="password" id="pass1" name="enterPassword" placeholder="Password"></p>
 		<p><input type="password" id="pass2" name="reEnterPassword" placeholder="Confirm Password"></p>
-		<textarea></textarea>
+		<textarea id="desc" placeholder="About you ..." cols="20" rows="8" resize="none"></textarea>
 		<!-- <p><input type="submit" name="" value="Save"> <input type="reset" name="" value="Reset"></p> -->
+		<!-- resize="vertical/horizontal" also possible -->
 		<p><button onclick="validate();" name="">Save</button> <input type="reset" name="" value="Reset"></p>
 	<!-- </form> -->
 	<script type="text/javascript">
 		function validate() {
+			let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
 			let firstName = document.getElementById('fname');
 			let lastName = document.getElementsByName('LastName')[0];
 			let age = document.getElementById('age');
 			let email = document.getElementById('emailId');
 			let phone = document.getElementById('phone');
+			let radioMale = document.getElementById('radioMale');
+			let radioFemale = document.getElementById('radioFemale');
+			let java = document.getElementById('javachk');
+			let js = document.getElementById('jschk');
+			let salary = document.getElementById('sal');
+			let pass1 = document.getElementById('pass1');
+			let pass2 = document.getElementById('pass2');
+			let desc = document.getElementById('desc');
 
 			if(firstName.value === "" || firstName.value === undefined || firstName.value === null ) {
 				alert("first name should not be empty");
@@ -44,16 +55,124 @@
 					firstName.value = "";
 					firstName.focus();
 					alert("Less than 4 characters not allowed");
-					
 					return false;
 				} 
 				if ( isNaN(firstName.value) === false ) {
-					alert("Its a number. Number not allowed");
 					firstName.value = "";
 					firstName.focus();
+					alert("Its a number. Number not allowed");
 					return false;
 				}
 			}
+
+			if(lastName.value === "" || lastName.value === undefined || lastName.value === null ) {
+				alert("last name should not be empty");
+				lastName.focus();
+				return false;
+			} else {
+				if(lastName.value.length <= 3 && isNaN(lastName.value)){  // isNaN() returns true for the strings and false for a valid number or a number as a string.
+					lastName.value = "";
+					lastName.focus();
+					alert("Less than 4 characters not allowed");
+					return false;
+				} 
+				if ( isNaN(lastName.value) === false ) {
+					lastName.value = "";
+					lastName.focus();
+					alert("Its a number. Number not allowed");
+					return false;
+				}
+			}
+
+			if(age.value === "") {
+				alert("Age should not be empty");
+				age.focus();
+				return false;
+			} else {
+				if(age.value < 13 || age.value > 100) {
+				alert("Age should be between 13 and 100");
+				age.value = ""
+				age.focus();
+				return false;
+				}
+			}
+
+
+			if(emailRegex.test(email.value) === false) {
+				alert("Not a valid email");
+				email.value = "";
+				email.focus();
+				return false;
+			}
+
+			if(phone.value === ""){
+				alert("Phone number should not be empty");
+				phone.focus();
+				return false;
+			} else {
+				if(isNaN(phone.value)){
+					alert("Phone number should be a number");
+					phone.value ="";
+					phone.focus();
+					return false;
+				}
+				if( phone.value.length !== 10){
+					alert("Length should be of 10 digits");
+					phone.value ="";
+					phone.focus();
+					return false;
+				}
+			}
+
+			if(!radioMale.checked && !radioFemale.checked) {
+				alert("Please select a Gender!!!");
+				return false;
+			}
+
+			if(!java.checked && !js.checked) {
+				alert("Please select a Skill!!!");
+				return false;
+			}
+
+			if(salary.value === "") {
+				alert("Please select salary range");
+					salary.focus();
+					return false;
+			}
+
+
+			if(pass1.value === "") {
+				alert("Password cannot be empty !!!");
+				pass1.focus();
+				return false;
+			} else if( pass2.value === "" ) {
+				alert("Confirm password cannot be empty !!!");
+				pass2.focus();
+				return false;
+			} else {
+				if(!(pass1.value === pass2.value)) {
+				alert("Passwords are not same");
+				pass1.value = "";
+				pass2.value = "";
+				pass1.focus();
+				return false;
+				}
+			}
+
+
+			if(desc.value === "" || desc.value.trim().length === 0) {
+				alert("Description cannot be empty");
+				desc.value = "";
+				desc.focus();
+				return false;
+			} else {
+				if(desc.value.trim().length > 50 ) {
+					alert("Max 50 characters allowed");
+					desc.focus();
+					return false;
+				}
+			}
+
 		}
 	</script>
 </body>
