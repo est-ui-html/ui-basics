@@ -1,3 +1,22 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // document.designMode = "on";
 // // "use strict"
 
@@ -51,16 +70,68 @@
 
 
 // ==========>
-var kvArray = [{key: 1, value: 10}, {key: 2, value: 20}, {key: 3, value: 30}];
+// var kvArray = [{key: 1, value: 10}, {key: 2, value: 20}, {key: 3, value: 30}];
 
-var arr = kvArray.map((ele) => {
-	return {...ele};
-});
+// var arr = kvArray.map((ele) => {
+// 	return {...ele};
+// });
 
-console.log(kvArray);
-console.log(arr);
+// console.log(kvArray);
+// console.log(arr);
 
-arr[2].key = 45; 
+// arr[2].key = 45; 
 
-console.log(kvArray);
-console.log(arr);
+// console.log(kvArray);
+// console.log(arr);
+
+// let obj = { name: "Tony", age: 35 };
+
+// console.log(obj);
+
+// let myFunction = function(name) {
+// 	obj.name = arguments[1];
+// 	console.log("myFunction executed");
+// }
+
+// console.log(myFunction("Thor", "Asgard"));
+
+// console.log(obj);
+
+// myFunction("Marvel");
+
+// console.log(obj);
+
+
+// let a = 10, a = a + 1;
+
+// console.log(a);
+
+// let myFunction = (a,b) => {
+// 	a = a || arguments[0];
+	
+// }
+// alert('HI');
+
+
+// pankaj
+
+// function sort(str) {
+// 	temp = "";
+// 	for(let i=0; i< str.length; i++) {
+// 		for(let j=i+1; j >= i; j--) {
+// 			// console.log(j);
+// 			if(str[i] > str[j]) {
+// 				// temp = str[i];
+// 				// str[i] = str[j];
+// 				// str[j] = temp;
+// 				console.log(j)
+// 				temp = temp.concat(str[j]);
+// 				console.log(temp);
+// 			}
+// 		}
+// 		console.log(i);
+// 	}
+// 	return temp;
+// }
+
+// console.log(sort("pankaj"));

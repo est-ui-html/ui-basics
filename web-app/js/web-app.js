@@ -18,23 +18,23 @@
 
 // console.log(a1[0]);
 
-let mobile = { 
-	brand: "Samsung", 
-	network: "Vodafone",
-	price: 17500,
-	camera: {
-		megapixel: 15,
-		type: "multi focal"
-	},
-	arr: [1, 2, 3],
-	dial: () => {
-		console.log("Inside mobile object");
-	}
-};
+// let mobile = { 
+// 	brand: "Samsung", 
+// 	network: "Vodafone",
+// 	price: 17500,
+// 	camera: {
+// 		megapixel: 15,
+// 		type: "multi focal"
+// 	},
+// 	arr: [1, 2, 3],
+// 	dial: () => {
+// 		console.log("Inside mobile object");
+// 	}
+// };
 
 // mobile["brand"] = "Mi";
 
-mobile.dial();
+// mobile.dial();
 // delete mobile.brand
 // console.log(mobile);
 
@@ -73,3 +73,43 @@ mobile.dial();
 // }
 
 // f();
+
+// ==============================
+
+
+
+let str = "Earth is the third planet from the Sun and the only astronomical object known to harbor life";
+console.log(str);
+let strArray = str.toLowerCase().split('');
+console.log(strArray);
+
+let vowelCount = 0;
+let countObject = {};
+let aCount = 0, eCount = 0, iCount = 0, oCount = 0, uCount = 0;
+
+for(var ele of strArray) {
+	if(ele === "a") {
+		aCount += 1;
+		countObject.a = aCount;
+		vowelCount += 1;
+	} else if(ele === "e") {
+		eCount += 1;
+		countObject.e = eCount;
+		vowelCount += 1;
+	} else if(ele === "i") {
+		iCount += 1;
+		countObject.i = iCount;
+		vowelCount += 1;
+	} else if(ele === "o") {
+		oCount += 1;	
+		countObject.o = oCount;
+		vowelCount += 1;
+	} else if(ele === "u") {
+		uCount += 1;
+		countObject.u = uCount;
+		vowelCount += 1;
+	}
+}
+
+console.log("The vowel count object is : ", countObject);
+console.log("The total vowel count is : ", vowelCount);

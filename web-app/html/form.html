@@ -2,26 +2,25 @@
 <html>
 <head>
 	<title>Application Form</title>
-
 </head>
 <body align="center">
 	<!-- <form style="border: 3px solid red; width: 30%" action="https://www.google.com/"> -->
-		<p><input type="text" class="sample" id="fname" name="firstName" placeholder="First Name*"></p>
-		<p><input type="text" id="lname" name="LastName" placeholder="Last Name*"></p>
+		<p><input type="text" onblur="onChangeEventHandler();" class="sample" id="fname" name="firstName" placeholder="First Name*"></p>
+		<p><input type="text" id="lname" onmouseover="mouseOver();" name="LastName" placeholder="Last Name*"></p>
 		<p><input type="number" id="age" name="age" placeholder="Enter Age"></p>
 		<p><input type="email" id="emailId" name="myEmail" placeholder="Your email"></p>
 		<p><input type="text" id="phone" name="myPhoneNumber" placeholder="Phone number"></p>
-		<p>Gender: <input type="radio" id="radioMale" name="gender" value="male">Male <input type="radio" id="radioFemale" name="gender" value="female"> Female</p>
+		<p>Gender: <input type="radio" id="radioMale" onchange="radioChanged();" name="gender" value="male">Male <input type="radio" id="radioFemale" onchange="radioChanged();" name="gender" value="female"> Female</p>
 		<p>Skills: <input type="checkbox" id="javachk" name="skills" value="java"><label for="javachk">Java</label><input type="checkbox" id="jschk" name="skills" value="javascript"><label for="jschk">Javascript</label></p>
 		<p>Expected Sal:
-			<select id="sal" name="salary">
+			<select onchange="selectVal();" id="sal" name="salary">
 				<option value=""> --- Select --- </option>
 				<option value="less"> <1000</option>
 				<option value="medium">1000 - 5000</option>
 				<option value="more">5000 - 10000</option>
 			</select>
 		</p>
-		<p><input type="password" id="pass1" name="enterPassword" placeholder="Password"></p>
+		<p><input type="password" onblur="onChangeEventHandler();" id="pass1" name="enterPassword" placeholder="Password"></p>
 		<p><input type="password" id="pass2" name="reEnterPassword" placeholder="Confirm Password"></p>
 		<textarea id="desc" placeholder="About you ..." cols="20" rows="8" resize="none"></textarea>
 		<!-- <p><input type="submit" name="" value="Save"> <input type="reset" name="" value="Reset"></p> -->
@@ -29,6 +28,30 @@
 		<p><button onclick="validate();" name="">Save</button> <input type="reset" name="" value="Reset"></p>
 	<!-- </form> -->
 	<script type="text/javascript">
+		function onChangeEventHandler() {
+			// console.log(event.target.value);
+			var fname = event.target;
+			if(fname.value === "abc") {
+				console.log("Name cannot be abc");
+				fname.value = "";
+				fname.focus();
+			}
+		}
+
+		function mouseOver() {
+			console.log("Mouse is moved over Last name");
+			console.log(event.target.value);
+		}
+
+		function radioChanged(){
+			console.dir(event.target);
+			console.log("The current Selected value is : ", event.target);
+		}
+
+		function selectVal() {
+			console.log("Selected value is  : ", event.target.value);
+		}
+ 
 		function validate() {
 			let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
