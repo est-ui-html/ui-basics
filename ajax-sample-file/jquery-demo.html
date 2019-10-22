@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Ajax Jquery</title>
 	<!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script> -->
-  <script type="text/javascript">
-  	function getData(){
-  		$.ajax({
-  			url: "https://jsonplaceholder.typicode.com/users",
-  			type: "GET",
-  			success: function(data) {
-  				console.log(data);
-  				let n = $('#name').val();
-  				let filterArr = data.splice(0,n);
-  				let count = filterArr.length;
-  				let parsedData = JSON.stringify(filterArr);
-  				$('#data').text(parsedData);
-  				$('#count').text(count);
-  			},
-  			error: function(err) {
-  				console.log(err);
-  				$('#data').text(JSON.stringify(err));
-  			}
-  		});
-  	}
-  	
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script> -->
+	<script src="function-constructor.js"></script>
+	<script type="text/javascript">
+		function getData() {
+			$.ajax({
+				url: "https://jsonplaceholder.typicode.com/users",
+				type: "GET",
+				success: function (data) {
+					console.log(data);
+					let n = $('#name').val();
+					let filterArr = data.splice(0, n);
+					let count = filterArr.length;
+					let parsedData = JSON.stringify(filterArr);
+					$('#data').text(parsedData);
+					$('#count').text(count);
+				},
+				error: function (err) {
+					console.log(err);
+					$('#data').text(JSON.stringify(err));
+				}
+			});
+		}
 
-  	function clearData() {
-  		$('#data').text("");
-  		$('#count').text("");
-  		window.console.clear();
-  	}
+
+		function clearData() {
+			$('#data').text("");
+			$('#count').text("");
+			window.console.clear();
+		}
   	// function getDataAxios(){
   	// 	axios.get("https://jsonplaceholder.typicode.com/users").
   	// 	then((response) => {
@@ -49,13 +51,16 @@
   	// 		$('#data').text(JSON.stringify(err));
   	// 	});
   	// }
-  </script>
+	</script>
+	
 </head>
+
 <body>
-	<input type="text" id="name" name="name" placeholder="Enter record count ... ">
+	<!-- <input type="text" id="name" name="name" placeholder="Enter record count ... ">
 	<button onclick="getData();">Get Data</button>
-	<button onclick="clearData();">Clear</button><br/><br/><br/>
-	<span id="data"></span><br/><br/>
-	JSON data counts ---> <span id="count"></span>
+	<button onclick="clearData();">Clear</button><br /><br /><br />
+	<span id="data"></span><br /><br />
+	JSON data counts ---> <span id="count"></span> -->
 </body>
+
 </html>
